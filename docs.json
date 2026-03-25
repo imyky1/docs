@@ -12,13 +12,13 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
+          "anchor": "anchors.in",
           "icon": "book-open-cover",
           "color": {
             "light": "#a52515",
             "dark": "#a52515"
           },
-          "href": "https://mintlify.com/docs"
+          "href": "https://anchors.in"
         },
         {
           "anchor": "Blog",
