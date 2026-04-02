@@ -1,0 +1,201 @@
+---
+title: "Pricing"
+description: "Guide to activating the Free Trial plan from brand pricing, including mobile verification and success-page handoff."
+---
+
+## Free Trial Activation
+
+Use the pricing flow to activate an eligible brand's Free Trial plan and continue into the brand dashboard.
+
+## Feature Summary
+
+- **Feature name:** Free Trial activation
+- **Stage:** Brand pricing
+- **Purpose:** Let an eligible brand activate the Free Trial plan and continue into the main brand experience
+- **Main routes:**
+  - `/brand/pricing`
+  - `/brand/pricing/checkout/success`
+
+## Page Purpose
+
+This flow lets a brand choose the `Free Trial` plan from the pricing page.
+
+If mobile verification is required, the user must complete it before the free trial is activated. Once activation succeeds, the user reaches the plan success page and can continue into the dashboard.
+
+## Who Should Use It
+
+- New brand users who have completed onboarding and want to start with the free trial
+- Brand users without an active paid plan who are eligible to use the free trial
+
+## Preconditions
+
+- The user must be signed in as a brand user
+- The user should complete onboarding first so the brand account can move into pricing cleanly
+- The user must be able to verify their mobile number if the account is not already verified
+
+## What the User Can Do in This Flow
+
+- Open the pricing page
+- Review available plans
+- Choose the Free Trial plan if it is available
+- Complete mobile verification if asked
+- Activate the free trial
+- Reach the activation success page
+- Continue to the dashboard
+
+## Important Rules and Limits
+
+- The free trial is only available when it is shown on the pricing page
+- If the account already has an active plan, the free trial option may not be shown
+- The free trial cannot be activated again after it has already been used
+- Mobile verification may be required before activation
+- Mobile OTP is a 6-digit code
+- Mobile OTP is valid for 2 minutes
+- The mobile verification popup allows up to 3 incorrect OTP attempts per code
+- The mobile verification flow allows one OTP request per minute
+- The mobile verification flow allows up to 5 OTP requests per hour
+
+## Step-by-Step Flow
+
+<Steps>
+  <Step title="Open the pricing page">
+    The user lands on the pricing page after completing Welcome onboarding.
+
+    The page shows plan cards such as `Free Trial`, `Basic`, `Pro`, and `Premium`, depending on account state and current offerings.
+  </Step>
+
+  <Step title="Review the free trial option">
+    If the free trial is available for the account, the user can select it from the pricing page.
+
+    The plan card shows the included plan details and visible pricing for the selected billing view.
+  </Step>
+
+  <Step title="Click Continue on the Free Trial plan">
+    The user clicks `Continue` on the `Free Trial` card.
+
+    If the account is already mobile verified, the flow proceeds directly to activation.
+
+    If the account is not mobile verified, a verification popup opens before activation can continue.
+  </Step>
+
+  <Step title="Complete mobile verification if required">
+    The popup asks for the mobile number.
+
+    The user enters a mobile number and clicks `Send OTP`.
+
+    <Warning>
+      If the mobile number is missing, the popup shows: `Please fill in Mobile number.`
+    </Warning>
+
+    <Warning>
+      If the mobile number is too short, the popup shows: `Enter a proper mobile number`
+    </Warning>
+
+    If OTP is sent successfully, the popup moves to the OTP step and starts a 2 minute countdown.
+  </Step>
+
+  <Step title="Enter and verify the mobile OTP">
+    The user enters the 6-digit OTP.
+
+    <Warning>
+      If the OTP is not 6 digits, the popup shows: `Enter a 6-digit OTP`
+    </Warning>
+
+    <Warning>
+      If the OTP is wrong, the popup shows an error and the remaining attempts count can be shown.
+    </Warning>
+
+    <Warning>
+      If the OTP expires, the user must request a new OTP.
+    </Warning>
+
+    <Warning>
+      If the user runs out of attempts, the current OTP stops working and a new OTP must be requested.
+    </Warning>
+
+    If verification succeeds, the popup closes and the free trial activation continues automatically.
+  </Step>
+
+  <Step title="Activate the free trial">
+    After verification is complete, or immediately if verification was already done, the free trial is activated.
+
+    If activation succeeds, the user is taken to the success page.
+
+    <Warning>
+      If the free trial has already been used, the user sees: `Free Tier is Already Used`
+    </Warning>
+
+    <Warning>
+      If activation fails for another reason, the page shows the returned error message.
+    </Warning>
+  </Step>
+
+  <Step title="Reach the success page">
+    The success page confirms that the selected plan has been activated.
+
+    The user sees a `Start Collaborating!` button.
+  </Step>
+
+  <Step title="Continue to the dashboard">
+    The user clicks `Start Collaborating!`.
+
+    The user is taken to the brand dashboard.
+  </Step>
+</Steps>
+
+## Expected Outcome
+
+- The brand account activates the free trial successfully
+- The user reaches the success page
+- The user can continue into the brand dashboard
+
+## What the User Should Know Before Using This Flow
+
+- Free trial activation is tied to plan eligibility and account state
+- The free trial flow is not a paid checkout when the selected free trial amount is zero
+- Mobile verification is part of activation when the account is not yet verified
+- The free trial cannot be reactivated once it has already been used on the account
+
+## Troubleshooting
+
+### Problem: I do not see the free trial option
+
+- The account may already have an active plan
+- The free trial may already have been used
+- Refresh the pricing page and check the available plan cards again
+
+### Problem: I clicked free trial and got a mobile verification popup
+
+This is expected if the account is not verified yet. Complete the mobile verification step to continue with activation.
+
+### Problem: I did not receive the mobile OTP
+
+- Confirm the mobile number shown in the popup
+- Wait for the resend countdown to finish
+- Request a new OTP after the timer ends
+- If repeated requests fail, wait before retrying because OTP sends are limited
+
+### Problem: My mobile OTP is not working
+
+- Enter the latest OTP only
+- Check whether more than 2 minutes have passed
+- Watch the remaining attempts message if it appears
+- If attempts are exhausted, request a new OTP
+
+### Problem: I see too many OTP request errors
+
+The mobile verification flow only allows one OTP request per minute. It also allows up to 5 OTP requests per hour.
+
+Wait before trying again.
+
+### Problem: I see `Free Tier is Already Used`
+
+This means the account has already activated the free trial before. The user must choose another available plan.
+
+### Problem: The plan was activated but I am not sure what to do next
+
+Use the success page button and continue to the dashboard. From there, the user can start using the main brand features available in the activated plan.
+
+## Related Next Step
+
+After activation, the user should continue into the brand dashboard.
