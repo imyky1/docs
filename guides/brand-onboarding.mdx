@@ -1,0 +1,166 @@
+---
+title: "Brand Onboarding"
+description: "Complete the Brand Welcome onboarding step to collect required brand details and continue to pricing."
+---
+
+## Brand Welcome Onboarding
+
+The Brand Welcome onboarding page collects the basic brand details required to move a new or incomplete brand account forward.
+
+**Main route:** `/brand/welcome`
+
+## Feature Summary
+
+- **Feature name:** Brand Welcome onboarding
+- **Stage:** Brand onboarding
+- **Purpose:** Collect the basic brand details required to move a new or incomplete brand account forward
+- **Main route:** `/brand/welcome`
+
+## Page Purpose
+
+This page helps anchors understand the brand before the account starts using the platform further. It is the main onboarding step shown after signup for new brand users or users with incomplete setup.
+
+The page collects key brand details and then sends the user to pricing.
+
+## Who Should Use It
+
+- New brand users after completing email OTP signup or login
+- Brand users whose setup is incomplete and are asked to finish onboarding before using the platform fully
+
+## Preconditions
+
+- The user must already be signed in as a brand user
+- The user should be ready to provide their brand details
+- The user must fill the required fields before continuing
+
+## What the User Can Do On This Page
+
+- View the current credits counter in the header
+- Fill in basic profile and brand details
+- Select how they heard about anchors
+- Save the details and continue to the pricing step
+
+## Fields Available On This Page
+
+- `Your Full Name`
+- `Designation`
+- `Company Name` required
+- `Website URL` required
+- `How did you hear about us?`
+
+## Available Options For "How did you hear about us?"
+
+- From Creator
+- From Friend
+- Google
+- WhatsApp groups
+- Linkedin
+- Instagram
+- Reddit
+- Twitter
+- Quora
+- Blogs
+
+## Important Rules And Limits
+
+- `Company Name` is required
+- `Website URL` is required
+- The `Save & Continue` button stays disabled until both required fields are filled
+- Completing fields can increase the visible credits total on the page
+- If the account has already moved past this step, the user may be sent directly to pricing instead of staying on this page
+
+## Step-By-Step Flow
+
+<Steps>
+  <Step title="Reach the onboarding page">
+    After successful brand signup or login, new or incomplete brand accounts are taken to the Welcome onboarding page.
+
+    If the account has already completed this step, the user may be redirected to pricing instead.
+  </Step>
+
+  <Step title="Review the onboarding form">
+    The page explains that the user should complete the brand profile.
+
+    The page shows the current credits area and explains that profile completion can earn more credits.
+  </Step>
+
+  <Step title="Enter personal and company details">
+    The user can enter their full name.
+
+    The user can enter their designation.
+
+    The user must enter the company name.
+
+    The user must enter the company website URL.
+  </Step>
+
+  <Step title="Select how they heard about anchors">
+    The user can choose one of the available source options.
+
+    This step is visible on the page but is not required to unlock the `Save & Continue` button.
+  </Step>
+
+  <Step title="Save the onboarding details">
+    The user clicks `Save & Continue`.
+
+    If `Company Name` is missing, the page shows: `Please Enter Company Name`
+
+    If `Website URL` is missing, the page shows: `Please Enter Company Website URL`
+
+    If the save is successful, the page shows a success message and continues to pricing.
+
+    If the save fails, the page shows the returned error message.
+  </Step>
+
+  <Step title="Continue to pricing">
+    After successful save, the user is redirected to the pricing page.
+
+    This is the next step where the user can activate a free trial or choose another plan.
+  </Step>
+</Steps>
+
+## Expected Outcome
+
+- The user's brand details are saved
+- The account moves past the Welcome onboarding step
+- The user reaches the pricing page
+
+## What the User Should Know Before Using This Page
+
+- This onboarding page is about basic brand setup, not mobile verification
+- Mobile verification happens later if the user tries to activate a plan that requires it
+- The page can show the credits total increasing as the user completes eligible fields
+- Required fields are clearly enforced because the user cannot continue without company name and website
+
+## Troubleshooting
+
+### Problem: I cannot click `Save & Continue`
+
+- Make sure `Company Name` is filled
+- Make sure `Website URL` is filled
+- Once both required fields are entered, the button should become available
+
+### Problem: I clicked save but got an error
+
+- Check whether the company name is missing
+- Check whether the website URL is missing
+- Retry after confirming the values entered in the form
+- If the issue continues, refresh the page and try again
+
+### Problem: I was sent to pricing without seeing this page
+
+- This usually means the account has already completed this onboarding step or is already positioned at the pricing step
+
+### Problem: My credits changed while filling the form
+
+- This is expected behavior on this page
+- Completing certain profile fields can increase the credits shown during onboarding
+
+## Related Next Step
+
+After this page, the next guide to use is the free trial activation guide under `brand/pricing`.
+
+<CardGroup>
+  <Card title="Brand Pricing" href="/brand/pricing" />
+  <Card title="Brand Signup" href="/brand/signup" />
+</CardGroup>
