@@ -36,7 +36,8 @@
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "development",
+              "guides/brand-onboarding"
             ]
           },
           {
